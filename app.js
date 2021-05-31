@@ -7,6 +7,8 @@ const p1markup = document.querySelector(".p1");
 const p2markup = document.querySelector(".p2");
 const endBanner = document.querySelector(".banner");
 const playersDiv = document.querySelector(".players-div");
+const nameForm1 = document.getElementById("form-1");
+const nameForm2 = document.getElementById("form-2");
 
 const gameboard = (function () {
   //prettier-ignore
@@ -73,6 +75,7 @@ const view = (function () {
     playersDiv.addEventListener("click", function (e) {
       if (!e.target.classList.contains("fa-refresh")) return;
       const refreshBtn = e.target;
+
       refreshBtn
         .closest(".player")
         .querySelector(".player-name")
