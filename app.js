@@ -6,6 +6,7 @@ const reset = document.querySelector(".resetBtn");
 const p1markup = document.querySelector(".p1");
 const p2markup = document.querySelector(".p2");
 const endBanner = document.querySelector(".banner");
+const playersDiv = document.querySelector(".players-div");
 
 const gameboard = (function () {
   //prettier-ignore
@@ -68,7 +69,22 @@ const view = (function () {
       } wins!`;
   };
 
-  return { showBanner };
+  const changeName = () => {
+    playersDiv.addEventListener("click", function (e) {
+      if (!e.target.classList.contains("fa-refresh")) return;
+      const refreshBtn = e.target;
+      refreshBtn
+        .closest(".player")
+        .querySelector(".player-name")
+        .classList.toggle("hidden-block");
+      refreshBtn
+        .closest(".player")
+        .querySelector(".player-form")
+        .classList.toggle("hidden-block");
+    });
+  };
+
+  return { showBanner, changeName };
 })();
 
 const controller = (function () {
@@ -113,6 +129,8 @@ const controller = (function () {
     endBanner.innerHTML = "";
     endBanner.classList.add("hidden");
   });
+
+  view.changeName();
 })();
 
 // gameboard.updateGameboard(p1.symbol, 3);

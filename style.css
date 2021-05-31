@@ -13,19 +13,30 @@ h1 {
   text-align: center;
   padding: 1rem;
 }
-ul {
-  width: 80%;
-  list-style: none;
+.players-div {
+  display: flex;
+  justify-content: space-around;
   font-size: 3rem;
 }
-ul li {
-  display: inline-flex;
+.player {
+  margin: auto;
 }
-ul li:last-child {
-  float: right;
-}
-li.active {
+.player.active {
   color: #ffc947;
+}
+.player button {
+  font-size: 20px;
+  padding: 3px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.player-form input {
+  line-height: 36px;
+  /* font-size: 28px; */
+}
+.player-form input[type="submit"] {
+  padding: 10px;
 }
 .grid-container {
   display: grid;

@@ -17,17 +17,28 @@
   </head>
   <body>
     <h1>Tic Tac Toe</h1>
-    <ul>
-      <li class="p1 active">
-        Player 1
-        <button>Change</button>
-        <form class="hidden-block">
-          <input type="text" name="p1" id="p1form" />
+    <div class="players-div">
+      <div class="p1 player active">
+        <div class="player-name">
+          <span>Player 1</span
+          ><button><i class="fa fa-refresh" aria-hidden="true"></i></button>
+        </div>
+        <form class="player-form hidden-block">
+          <input type="text" placeholder="name" />
           <input type="submit" value="OK" />
         </form>
-      </li>
-      <li class="p2">Player 2</li>
-    </ul>
+      </div>
+      <div class="p2 player">
+        <div class="player-name">
+          <span>Player 2</span
+          ><button><i class="fa fa-refresh" aria-hidden="true"></i></button>
+        </div>
+        <form class="player-form hidden-block">
+          <input type="text" placeholder="name" />
+          <input type="submit" value="OK" />
+        </form>
+      </div>
+    </div>
     <div class="container">
       <div class="grid-container">
         <div class="grid-item" data-field="0"></div>
