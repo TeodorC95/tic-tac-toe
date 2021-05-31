@@ -62,3 +62,28 @@ button {
 .fa-times:before {
   font-size: 6.5rem;
 }
+.banner {
+  color: #ffc947;
+  font-size: 3rem;
+  background-color: #185adb;
+  width: 35%;
+  padding: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: ;
+  -moz-transform: ;
+  -ms-transform: ;
+  -o-transform: ;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: #ffc947 2px solid;
+}
+
+.hidden {
+  visibility: hidden;
+}

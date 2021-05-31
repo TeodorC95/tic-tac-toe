@@ -5,6 +5,7 @@ const fields = document.querySelectorAll(".grid-item");
 const reset = document.querySelector("button");
 const p1markup = document.querySelector(".p1");
 const p2markup = document.querySelector(".p2");
+const endBanner = document.querySelector(".banner");
 
 const gameboard = (function () {
   //prettier-ignore
@@ -57,6 +58,19 @@ const playerFactory = player => {
 const p1 = playerFactory(1);
 const p2 = playerFactory(2);
 
+const view = (function () {
+  const showBanner = (player = false) => {
+    endBanner.classList.remove("hidden");
+    if (!player) endBanner.textContent = "It's a draw!";
+    else
+      endBanner.textContent = `${
+        player === "X" ? "Player 1" : "Player 2"
+      } wins!`;
+  };
+
+  return { showBanner };
+})();
+
 const controller = (function () {
   let flag = true;
   let activePlayer = p1;
@@ -70,12 +84,17 @@ const controller = (function () {
     e.target.innerHTML = activePlayer.htmlSymbol;
     gameboard.updateGameboard(activePlayer.symbol, id);
     // gameboard.checkVictory(activePlayer.symbol);
-    flag = gameboard.checkVictory(activePlayer.symbol);
+    // flag = gameboard.checkVictory(activePlayer.symbol);
+    if (!gameboard.checkVictory(activePlayer.symbol)) {
+      flag = false;
+      view.showBanner(activePlayer.symbol);
+    }
     if (!flag) return;
     if (gameboard.checkTie()) {
       flag = false;
       p1markup.classList.add("active");
       p2markup.classList.add("active");
+      view.showBanner();
     }
     activePlayer === p1 ? (activePlayer = p2) : (activePlayer = p1);
     p1markup.classList.toggle("active");
@@ -91,17 +110,10 @@ const controller = (function () {
     gameboard.resetGameboard();
     p1markup.classList.add("active");
     p2markup.classList.remove("active");
+    endBanner.innerHTML = "";
+    endBanner.classList.add("hidden");
   });
 })();
 
 // gameboard.updateGameboard(p1.symbol, 3);
 // gameboard.updateGameboard(p2.symbol, 1);
-const view = (function () {
-  const endBanner = document.querySelector("banner");
-
-  const showBanner = (player = false) => {
-    endBanner.classList.remove("hidden");
-    if (!player) endBanner.textContent = "It's a draw!";
-    else endBanner.textContent = `${player} wins!`;
-  };
-})();
