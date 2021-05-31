@@ -33,7 +33,7 @@ li.active {
   grid-template-rows: 150px 150px 150px;
   /* background-color: #2196f3; */
   padding: 10px;
-  width: 460px;
+  width: 450px;
   margin: 0 auto;
   margin-top: 4rem;
   color: #ffc947;
@@ -46,7 +46,7 @@ li.active {
   text-align: center;
 }
 
-button {
+.resetBtn {
   width: 15rem;
   margin-top: 3rem;
   padding: 2rem;
@@ -65,8 +65,9 @@ button {
 .banner {
   color: #ffc947;
   font-size: 3rem;
-  background-color: #185adb;
-  width: 35%;
+  background-color: rgba(24, 90, 219, 0.9);
+  width: 50%;
+  min-width: 470px;
   padding: 2rem;
   position: fixed;
   top: 50%;
@@ -86,4 +87,7 @@ button {
 
 .hidden {
   visibility: hidden;
+}
+.hidden-block {
+  display: none;
 }

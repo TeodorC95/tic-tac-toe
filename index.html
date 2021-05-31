@@ -18,7 +18,14 @@
   <body>
     <h1>Tic Tac Toe</h1>
     <ul>
-      <li class="p1 active">Player 1</li>
+      <li class="p1 active">
+        Player 1
+        <button>Change</button>
+        <form class="hidden-block">
+          <input type="text" name="p1" id="p1form" />
+          <input type="submit" value="OK" />
+        </form>
+      </li>
       <li class="p2">Player 2</li>
     </ul>
     <div class="container">
@@ -34,7 +41,7 @@
         <div class="grid-item" data-field="8"></div>
       </div>
     </div>
-    <button>RESET</button>
+    <button class="resetBtn">RESET</button>
     <div class="banner hidden">TEST</div>
   </body>
 </html>
