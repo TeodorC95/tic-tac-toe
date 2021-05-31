@@ -2,7 +2,7 @@
 
 const container = document.querySelector(".grid-container");
 const fields = document.querySelectorAll(".grid-item");
-const reset = document.querySelector("button");
+const reset = document.querySelector(".resetBtn");
 const p1markup = document.querySelector(".p1");
 const p2markup = document.querySelector(".p2");
 const endBanner = document.querySelector(".banner");
